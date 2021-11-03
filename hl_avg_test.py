@@ -15,11 +15,11 @@ def rng():
 	global r_list
 	rn_pos1 = r.randint(1, len(r_list)-1)
 	rn_start = r_list[rn_pos1]
-	r_list.pop(rn_pos1)
+	# r_list.pop(rn_pos1)
 	rn_pos2 = r.randint(1, len(r_list)-1)
 	rn_new = r_list[rn_pos2]
 	r_list.pop(rn_pos2)
-	return rn_start, rn_new
+	return rn_start, rn_new, rn_pos1
 
 
 def main():
@@ -32,7 +32,8 @@ def main():
 	while i < 100000:
 		q = 0
 		ln = 0
-		rn_start, rn_new = rng()
+		rn_start, rn_new, rn_pos1 = rng()
+		# r_list.pop(rn_pos1)
 		print('\n'*5)
 		while q == 0:
 			rn_start, rn_new = rn_new, rng()[1]
