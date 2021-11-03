@@ -28,13 +28,14 @@ def main():
 	# print(rn_start)
 	# rn_start, rn_new = rng()
 	i = 0
+
 	while i < 100000:
 		q = 0
 		ln = 0
 		rn_start, rn_new = rng()
-
+		print('\n'*5)
 		while q == 0:
-			rn_start, rn_new = rn_start, rng()[1]
+			rn_start, rn_new = rn_new, rng()[1]
 			# rn_start, rn_new = rng()
 			lst_avg = sum(r_list)/len(r_list)
 			print("start:", rn_start, "  new: ", rn_new)
@@ -100,6 +101,6 @@ for k in range(max(empt_avg_score_list)+1):
 # print(empt_perc_list)
 print(perc_listtt)
 plt.hist(empt_avg_score_list, bins = (max(empt_avg_score_list)*2)+1)
-plt.hist(perc_listtt, bins = (max(perc_listtt)*2)+1)
+# plt.hist(perc_listtt, bins = (max(perc_listtt)*2)+1)
 # print(perc_listtt)
 plt.show()
